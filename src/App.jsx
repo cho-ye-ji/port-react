@@ -31,6 +31,12 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div className="button-wrap">
+        <button className="button button--confirm">확인</button>
+        <button className="button button--save">저장</button>
+        <button className="button button--cancel">취소</button>
+        <button className="button button--save button--disabled">비활성 </button>
+    </div>
     </>
   )
 }

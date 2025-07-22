@@ -1,0 +1,57 @@
+@use '../base/tokens' as *;
+.button-wrap{
+    display: flex;
+    gap: 0.5rem;
+}
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &--confirm{
+        // 확인 버튼
+        background-color: map-get($colors, primary);
+        color: map-get($colors, white);
+        &:hover{
+            background-color: darken(map-get($colors, primary), 5%);
+        }
+    }
+    &--save {
+        background-color: map-get($colors, success);
+        color: map-get($colors, white);
+    
+        &:hover {
+          background-color: darken(map-get($colors, success), 5%);
+        }
+      }
+    
+      &--cancel {
+        background-color: map-get($colors, light);
+        color: map-get($colors, gray);
+        border: 1px solid map-get($colors, gray);
+    
+        &:hover {
+          background-color: lighten(map-get($colors, light), 3%);
+        }
+      }
+    
+      &--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+}
+/*
+    작업 추가 사항
+1. 사이즈 옵션 추가 .button--sm, .button--lg 등
+2. 아이콘 포함된 버튼 추가, 	<i class="icon icon-save"></i> 등과 함께 inline-flex 정렬
+3. full-width  버튼 추가, 	.button--block { width: 100%; } 등
+3-1. 2개 정렬,3개정렬,4개 정렬까지 추가
+3-2. 반응형은 어떻게 처리할지~?
+4. theme 모드 대응, 색상 map을 분리 ($colors-light, $colors-dark)
+*/

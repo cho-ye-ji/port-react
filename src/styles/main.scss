@@ -1,4 +1,5 @@
-body {
-  background-color: #fdfdfd;
-  font-family: Pretendard, sans-serif;
-}
+@use './base/reset';
+@use './base/tokens' as *;
+@use './base/variables';
+@use './components/button';
+
