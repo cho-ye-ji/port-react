@@ -1,12 +1,25 @@
-# React + Vite
+# Yeji's React Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+작업 목표
+- 컴포넌트 관리
+- 여러가지 프레임워크 적용 및 작업
+- 프레임 워크에 대한 비교 분석
+- 공통 스타일
+- 다양한 방법을 사용함으로써, 흐름과 감각 익혀보기
 
-Currently, two official plugins are available:
+개인 목표
+- 리액트를 활용하여 나를 표현하기
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##사용스택
+- react(https://ko.react.dev/) 를 사용하여 사이트를 번들링하고 관리합니다.
+- gsap(https://greensock.com/gsap) 를 이용하여 패럴랙스 효과를 줍니다.
+- git(https://github.com/) 을 사용하여 파일을 관리하고, 배포합니다.
+- HTML, CSS 기반으로 웹사이트의 기본 레이아웃 설계하고, 웹 표준 및 웹 접근성을 준수하여 잡업합니다.
+ [ARIA(Accessible Rich Internet Applications)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
 
-## Expanding the ESLint configuration
+출처: https://webstoryboy.co.kr/1934 [WEBSTORYBOY:티스토리]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. vite
+2. react
+3. scss
+4. vue and next (미정)

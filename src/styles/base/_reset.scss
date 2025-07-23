@@ -1,4 +1,7 @@
+@use './tokens' as * ;
+//@use '../base/tokens' as *;
 body {
     background-color: #fdfdfd;
     font-family: Pretendard, sans-serif;
+    color: map-get($colors, text);
 }
