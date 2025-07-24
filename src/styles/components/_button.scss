@@ -1,4 +1,7 @@
+@use "sass:map";
+@use "sass:color";
 @use '../base/tokens' as *;
+
 .button-wrap{
     display: flex;
     gap: 0.5rem;
@@ -15,28 +18,28 @@
     transition: all 0.2s ease-in-out;
     &--confirm{
         // 확인 버튼
-        background-color: map-get($colors, primary);
-        color: map-get($colors, white);
+        background-color: map.get($colors, primary);
+        color: map.get($colors, white);
         &:hover{
-            background-color: darken(map-get($colors, primary), 5%);
+          background-color: map.get($colors, secondary);
         }
     }
     &--save {
-        background-color: map-get($colors, success);
-        color: map-get($colors, white);
+        background-color: map.get($colors, success);
+        color: map.get($colors, white);
     
         &:hover {
-          background-color: darken(map-get($colors, success), 5%);
+          background-color: map.get($colors, success-dark);
         }
       }
     
       &--cancel {
-        background-color: map-get($colors, light);
-        color: map-get($colors, gray);
-        border: 1px solid map-get($colors, gray);
+        background-color: map.get($colors, light);
+        color: map.get($colors, gray);
+        border: 1px solid map.get($colors, gray);
     
         &:hover {
-          background-color: lighten(map-get($colors, light), 3%);
+          background-color: map.get($colors, gray);
         }
       }
     

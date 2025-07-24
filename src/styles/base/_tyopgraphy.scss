@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "./tokens" as *;
+
+@mixin typography($size, $weight: regular, $line-height: normal) {
+    font-size: map.get($font-sizes, $size);
+    font-weight: map.get($font-weights, $weight);
+    line-height: map.get($line-heights, $line-height);
+  }
+
+  //사용 예시
+  .title-large {
+    @include typography(xlarge, bold, tight);
+  }
+  
+  .title-medium {
+    @include typography(large, semibold);
+  }
+  
+  .text-body {
+    @include typography(medium);
+  }
+  
+  .text-caption {
+    @include typography(xsmall, regular);
+  }

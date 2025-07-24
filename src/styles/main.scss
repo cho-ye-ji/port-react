@@ -1,5 +1,7 @@
 @use './base/reset';
 @use './base/tokens' as *;
-@use './base/variables';
+@use './base/variables' as *;
 @use './components/button';
-
+@use './components/header';
+@use './pages/home';
+@use './components/modal';

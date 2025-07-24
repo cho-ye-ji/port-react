@@ -1,0 +1,26 @@
+@use '../base/variables' as *;
+@use '../base/tokens' as *;
+@use "sass:map";
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    color: map.get($colors, white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: $z-index-header;
+    background-color: rgba(map.get($colors, primary), 1);
+    transition:background-color 0.3s ease;
+    &.scrolled{
+        background-color: rgba(map.get($colors, primary), 0.7);
+        backdrop-filter: blur(8px); // 배경 흐림 효과
+    }
+    &.hide{
+        display: none;
+    }
+}

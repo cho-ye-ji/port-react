@@ -1,6 +1,19 @@
-//색상 토큰
-// $color-primary: #5f4b8b;
-// $color-secondry: #f1916d;
-// $color-background: #f5f5f5;
-// $color-text: #232323;
-// $color-border: #ddd;
+// 상태/역할 중심
+// hover color, radius, shadow....?
+@use "sass:map";
+@use "sass:color";
+@use './tokens' as *;
+
+$z-index-header: 100;
+$header-height: 80px;
+
+// 상태별 색상
+$btn-hover-primary: color.adjust(map.get($colors, primary), $lightness: -5%);
+$btn-hover-danger: color.adjust(map.get($colors, danger), $lightness: -5%);
+$text-disabled-color: color.adjust(map.get($colors, gray), $lightness: 20%);
+
+// 라운드, 그림자 등
+$border-radius-sm: 4px;
+$border-radius-lg: 12px;
+$box-shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.05);
+

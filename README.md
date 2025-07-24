@@ -22,4 +22,8 @@
 1. vite
 2. react
 3. scss
-4. vue and next (미정)
+4. react-router-dom
+5. vue and next (미정)
+
+포트폴리오 작업 노트
+https://incongruous-border-d09.notion.site/React-Portfolio-2385d3ed9f2780768431cb29d508bb8a?source=copy_link
