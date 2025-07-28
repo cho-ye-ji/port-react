@@ -1,5 +1,5 @@
 //color map
-//color, font,spacing, z-index 등 디자인 고정값
+//color, font, spacing, z-index 등 디자인 고정값
 //컬러
 $colors:(
     primary: #4461F2,
@@ -19,20 +19,45 @@ $colors:(
     white: #fff
 );
 
+// Font families
+$font-mont: "Montserrat", sans-serif;
+$font-nanum: "nanumSquareNeo", sans-serif;
+$font-gmarket: "gmarket", sans-serif;
+
 // 타이포그래피
 $font-sizes: (
-  xsmall: 0.75rem,   // 12px
-  small: 0.875rem,   // 14px
-  medium: 1rem,      // 16px
-  large: 1.25rem,    // 20px
-  xlarge: 1.5rem     // 24px
+    title-xl: 2rem,       // 32px
+    title-lg: 1.75rem,    // 28px
+    title-md: 1.5rem,     // 24px
+    title-sm: 1.25rem,    // 20px
+
+    body-lg: 1.125rem,    // 18px
+    body-md: 1rem,        // 16px
+    body-sm: 0.875rem,    // 14px
+
+    caption: 0.75rem,     // 12px
+    
+    button-xs: 0.75rem,  //12px
+    button-sm: 0.875rem, //14px
+    button-md: 1rem,     //16px
+    button-lg: 1.125rem,  //18px
+
+    alert-sm: 0.875rem,   //14px
+    
+    description: 0.75rem  //12px
 );
 
 $font-weights: (
-  regular: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700
+    // thin: 100,
+    // light: 300,
+    // regular: 400,
+    // medium: 500,
+    // semibold: 600,
+    // bold: 700,
+    // black: 900
+    regular: 400,
+    medium: 500,
+    bold: 700
 );
 
 // 여백 토큰
@@ -48,6 +73,21 @@ $line-heights: (
   normal: 1.5,
   relaxed: 1.75
 );
+
+$letter-spacings: (
+  default: 0,
+  wide: 0.02em,
+  narrow: -0.01em
+);
+
+//반응형
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
+
 // z-index
 $z-indices: (
   header: 100,
