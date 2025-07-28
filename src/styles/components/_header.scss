@@ -16,6 +16,11 @@
     z-index: $z-index-header;
     background-color: rgba(map.get($colors, primary), 1);
     transition:background-color 0.3s ease;
+    nav{
+        display: flex;
+        gap: 6px;
+        flex-direction: row;
+    }
     &.scrolled{
         background-color: rgba(map.get($colors, primary), 0.7);
         backdrop-filter: blur(8px); // 배경 흐림 효과
@@ -23,4 +28,5 @@
     &.hide{
         display: none;
     }
+    
 }

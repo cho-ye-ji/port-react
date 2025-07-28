@@ -1,7 +1,19 @@
+@use 'sass:map';
+@use 'sass:color';
+
 @use './base/reset';
 @use './base/tokens' as *;
+@use './base/mixin' as *;
+
+@use './base/tyopgraphy';
+@use './base/font';
 @use './base/variables' as *;
+
+
 @use './components/button';
 @use './components/header';
-@use './pages/home';
 @use './components/modal';
+
+@use './pages/home';
+
+

@@ -42,13 +42,19 @@ footer, header, hgroup, menu, nav, section {
 }
 
 // 기본 폰트/줄간격/색상
-body {
+html {
+  font-size: 16px;
+  font-family: $font-gmarket;
+  font-weight: 400;
   line-height: 1.5;
-  color: #232323;
-  background-color: #fff;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-  word-break: keep-all;
-  -webkit-font-smoothing: antialiased;
+  color: map.get($colors, text);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; 
+    font-family: $font-gmarket;
+    color: map.get($colors, text);
 }
 
 // 리스트 스타일 제거

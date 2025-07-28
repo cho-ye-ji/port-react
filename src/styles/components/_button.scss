@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:color";
-@use '../base/tokens' as *;
+@use '../base/tokens' as * ;
+@use '../base/mixin' as * ;
 
 .button-wrap{
     display: flex;
@@ -10,14 +11,27 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: map.get($font-sizes, button-md);
     padding: 0.6rem 1.4rem;
     border-radius: 4px;
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    &--confirm{
-        // 확인 버튼
+    //size 
+    //유틸리티용 클래스
+    &--sm {
+      @include font-style(button-sm, medium, normal);
+      padding: 0.375rem 0.75rem;
+    }
+    &--md {
+      @include font-style(button-md, medium, normal);
+      padding: 0.5rem 1rem;
+    }
+    &--lg {
+      @include font-style(button-lg, medium, normal);
+      padding: 0.75rem 1.25rem;
+    }  
+    &--confirm{ // 확인 버튼
         background-color: map.get($colors, primary);
         color: map.get($colors, white);
         &:hover{
@@ -32,22 +46,21 @@
           background-color: map.get($colors, success-dark);
         }
       }
-    
-      &--cancel {
-        background-color: map.get($colors, light);
-        color: map.get($colors, gray);
-        border: 1px solid map.get($colors, gray);
-    
-        &:hover {
-          background-color: map.get($colors, gray);
-        }
+    &--cancel {
+      background-color: map.get($colors, light);
+      color: map.get($colors, gray);
+      border: 1px solid map.get($colors, gray);
+  
+      &:hover {
+        background-color: map.get($colors, gray);
       }
-    
-      &--disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-      }
+    }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    //disabled type 02 border형, bg형
 }
 /*
     작업 추가 사항

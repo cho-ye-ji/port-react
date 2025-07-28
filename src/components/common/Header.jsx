@@ -25,9 +25,13 @@ const Header = () => {
     
     return(
         <header className={`header ${shoulHideHeader ? "hide" : ""}`}>
-            <h1> 조예지 포트폴리오 </h1>
+            <h1> REACT PORTFOLIO </h1>
             <nav>
-                <Link to="/">홈</Link>
+                <Link to="/">INTRO</Link>
+                <Link to="/">SKILL</Link>
+                <Link to="/">SITE</Link>
+                <Link to="/">PORTFOLIO</Link>
+                <Link to="/">CONTACT</Link>
             </nav>
         </header>
     );

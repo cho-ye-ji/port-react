@@ -4,11 +4,14 @@ import React, { useState } from "react";
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return(
-        <main style={{ padding: '2rem' }}>
-        <h2>홈 화면</h2>
-        <p>여기는 메인 홈입니다.</p>
-        
-      </main>
+        <main className="main" style={{ padding: '2rem' }}>
+            <section id="intro">
+                intro
+            </section>
+            <section id="skill">
+                skill
+            </section>
+        </main>
     );
 }
 export default Home;

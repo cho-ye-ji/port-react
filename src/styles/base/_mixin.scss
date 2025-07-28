@@ -1,2 +1,12 @@
-//모들별 mixin
-// button mixin, media query
+// 모들별 mixin
+@use "sass:map";
+@use "./tokens" as *;
+
+// text style mixin
+@mixin font-style($role-size, $weight: regular, $lh: normal, $ls: default) {
+    font-size: map.get($font-sizes, $role-size);
+    font-weight: map.get($font-weights, $weight);
+    line-height: map.get($line-heights, $lh);
+    letter-spacing: map.get($letter-spacings, $ls);
+}
+

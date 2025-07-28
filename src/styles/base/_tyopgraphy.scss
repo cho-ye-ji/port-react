@@ -1,25 +1,37 @@
 @use "sass:map";
 @use "./tokens" as *;
+@use "./mixin" as *;
 
-@mixin typography($size, $weight: regular, $line-height: normal) {
-    font-size: map.get($font-sizes, $size);
-    font-weight: map.get($font-weights, $weight);
-    line-height: map.get($line-heights, $line-height);
-  }
+/****
+font-size role
+- role-size, font-weight, line-height, letter-spacing
+****/ 
+.page-title{
+    @include font-style(title-xl, bold, tight);
+}
 
-  //사용 예시
-  .title-large {
-    @include typography(xlarge, bold, tight);
-  }
+.section-title{
+    @include font-style(title-md, bold, normal);
+}
+.body-text {
+    @include font-style(body-md, regular, normal);
+}
   
-  .title-medium {
-    @include typography(large, semibold);
-  }
+.caption {
+  @include font-style(caption-sm, regular, relaxed);
+}
+
+.button-text-sm {
+    @include font-style(button-sm, medium, normal);
+}
+.button-text-md {
+    @include font-style(button-md, medium, normal);
+}
+.button-text-lg {
+    @include font-style(button-lg, medium, normal);
+}
   
-  .text-body {
-    @include typography(medium);
-  }
+
   
-  .text-caption {
-    @include typography(xsmall, regular);
-  }
+
+  
