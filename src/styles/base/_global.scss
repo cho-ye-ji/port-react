@@ -1,0 +1,20 @@
+
+:root {
+    // 모바일 height 대응 변수
+    --vh: 1vh;
+}
+
+// flex gap Safari fallback
+.flex-gap-fix {
+    display: flex;
+    gap: 1rem;
+  
+    // gap 미지원 브라우저 대응
+    @supports not (gap: 1rem) {
+      margin-right: -1rem;
+  
+      > * {
+        margin-right: 1rem;
+      }
+    }
+  }
