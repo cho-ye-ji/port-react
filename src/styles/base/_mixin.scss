@@ -10,3 +10,28 @@
     letter-spacing: map.get($letter-spacings, $ls);
 }
 
+//responsive
+@mixin vh-full() {
+  height: 100vh;
+  height: 100dvh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// iOS Safari flex-bug 대응 (특정 상황)
+@mixin fix-ios-flex {
+  min-height: 0;
+  min-width: 0;
+}
+/***
+사용 방법
+***/
+.full-page {
+    @include vh-full;
+    @include flex-center;
+}
