@@ -9,7 +9,42 @@
     line-height: map.get($line-heights, $lh);
     letter-spacing: map.get($letter-spacings, $ls);
 }
-
+// Flex 대응 mixin
+@mixin flexbox{
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+}
+@mixin flex-direction($direction) {
+    @if $direction == row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    } @else if $direction == column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    }
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+@mixin justify-content($value) {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+    justify-content: $value;
+  }
+@mixin align-items($value) {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+    align-items: $value;
+}
+/**
+사용 방법
+.container {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(center);
+}
+**/
 //responsive
 @mixin vh-full() {
   height: 100vh;

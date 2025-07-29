@@ -40,6 +40,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+// IE11 대응용 - HTML, BODY 높이 설정
+html, body {
+    height: 100%; // IE11 flex 부모 높이 계산용
+}
 
 // 기본 폰트/줄간격/색상
 html {
@@ -48,6 +52,8 @@ html {
   font-weight: 400;
   line-height: 1.5;
   color: map.get($colors, text);
+  -webkit-text-size-adjust: 100%; // iOS 폰트 자동확대 방지
+  -ms-text-size-adjust: 100%;     // IE 대응
 }
 body {
     margin: 0;
@@ -82,6 +88,9 @@ button {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 // input, textarea 기본값
@@ -92,6 +101,9 @@ input, textarea {
   border: none;
   background: none;
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 // strong 초기화
