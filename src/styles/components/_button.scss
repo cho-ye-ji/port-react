@@ -18,7 +18,7 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     //size 
-    //유틸리티용 클래스
+    //유틸리티용 클래스, modifier방식
     &--sm {
       @include font-style(button-sm, medium, normal);
       padding: 0.375rem 0.75rem;

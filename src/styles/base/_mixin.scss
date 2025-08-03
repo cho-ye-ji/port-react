@@ -46,6 +46,19 @@
 }
 **/
 //responsive
+
+// media query 유틸
+@mixin respond-max($breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  
+@mixin respond-min($breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+}
 @mixin vh-full() {
   height: 100vh;
   height: 100dvh;

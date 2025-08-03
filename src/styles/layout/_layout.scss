@@ -1,44 +1,44 @@
-@use '../base/tokens' as * ;
+// @use '../base/tokens' as * ;
+// /*home 이랑 비교 후 사용 및 미사용 판별*/
+// .wrapper {
+//     width: 100%;
+//     min-height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .page {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .container {
+//     max-width: 1200px;
+//     width: 100%;
+//     margin: 0 auto;
+//     padding: 0 1rem;
+//   }
+  
+//   .container-inner {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//   }
+  
+//   .contents {
+//     flex: 1;
+//   }
+  
+//   .section {
+//     padding: 2rem 0;
+//   }
 
-.wrapper {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .page {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .container-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .contents {
-    flex: 1;
-  }
-  
-  .section {
-    padding: 2rem 0;
-  }
-
-  //정중앙 화면 에러,로딩 등
-  .centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-  }
+//   //정중앙 화면 에러,로딩 등
+//   .centered {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     min-height: 100vh;
+//     text-align: center;
+//   }

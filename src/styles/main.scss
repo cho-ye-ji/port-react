@@ -5,7 +5,7 @@
 @use './base/tokens' as *;
 @use './base/mixin' as *;
 
-@use './base/tyopgraphy';
+@use './base/typography';
 @use './base/font';
 @use './base/variables' as *;
 
@@ -14,7 +14,7 @@
 @use './components/header';
 @use './components/modal';
 
-@use './layout/layout';
+// @use './layout/layout';
 
 @use './pages/home';
 

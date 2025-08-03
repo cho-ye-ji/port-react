@@ -3,29 +3,51 @@
 @use "sass:map";
 
 .header{
+    font-family: $font-mont;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: $header-height;
-    color: map.get($colors, white);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     z-index: $z-index-header;
-    background-color: rgba(map.get($colors, primary), 1);
+    background-color: map.get($colors, white);
+    color: rgba(map.get($colors, primary), 1);
     transition:background-color 0.3s ease;
     nav{
         display: flex;
-        gap: 6px;
+        align-items: center;
+        gap: 7px;
         flex-direction: row;
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px;
+            width: 100%;
+            flex: 1;
+            height: 28px;
+            box-sizing: border-box;
+            // line-height: 28px;
+            // background-color: rgba(255,0,0,0.2);;
+            &.active{
+                color: map.get($colors, white);
+                background-color: map.get($colors, primary);
+                border-radius: 6px;
+                font-weight: map.get($font-weights, bold);
+                display: flex;
+                align-items: center;
+            }
+        }
     }
     &.scrolled{
         background-color: rgba(map.get($colors, primary), 0.7);
-        backdrop-filter: blur(8px); // 배경 흐림 효과
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
-    &.hide{
+    &.no-header{
         display: none;
     }
     

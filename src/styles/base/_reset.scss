@@ -41,7 +41,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 // IE11 대응용 - HTML, BODY 높이 설정
-html, body {
+dy {
     height: 100%; // IE11 flex 부모 높이 계산용
 }
 
@@ -62,7 +62,12 @@ body {
     font-family: $font-gmarket;
     color: map.get($colors, text);
 }
-
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 // 리스트 스타일 제거
 ol, ul {
   list-style: none;
