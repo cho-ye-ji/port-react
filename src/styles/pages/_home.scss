@@ -1,0 +1,153 @@
+// 레이아웃 새로 컴포넌트화
+// 인트로 컨텐츠 컴포넌트 분리
+// 스타일 위치에 맞게 이동
+//layout.scss contered 정중앙 용이 있고 왼쪽 정렬용도 분류해서 만들어야함 
+@use '../base/tokens' as *;
+@use '../base/_mixin' as *;
+@use "sass:map";
+
+.wrapper {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+.page{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: rgb(246, 251, 255);
+    .hr{
+      width: 30px;
+      height: 2px;
+      background-color: map.get($colors, text);
+    }
+    .heading-lg{ /* 공통 선언하기 */
+      font-size: map.get($font-sizes,heading-lg);
+      font-weight: map.get($font-weights, bold);
+      color: map.get($colors , text);
+      font-family: $font-mont;
+      min-width: 50px;
+    }
+    .ani-text{
+      font-size: map.get($font-sizes, title-md);
+      color: map.get($colors , text);
+      span{
+        font-weight: map.get($font-weights, bold);
+      }
+    }
+    &.page-home {
+        .container-body{
+            .section{
+                &--left{
+                    flex: 0 0 40%;
+                    background-color: map.get($colors, text);
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    // 1024px 이하에서 이미지 숨김
+                    @include respond-max(lg) {
+                        display: none;
+                    }
+                }
+                &--right{
+                    flex: 1 1 auto;
+                    display: flex;
+                    align-items: center;
+                    padding: 60px;
+                    @include respond-max(lg){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .container-body{
+            background-color: map.get($colors, primary-light);
+            display: flex;
+        }
+        
+    }
+
+    .page-body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh; 
+        padding-top: 80px;
+
+        &.no-header {
+          padding-top: 0;
+        }
+    }
+    .page-sub{
+        // 서브 페이지용
+        .container-inner {
+            align-items: flex-start;
+        }
+    }
+
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        flex:1 ;
+        display: flex;
+        .container-inner {
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*설명, 서브 페이지용은 정렬 다르게*/
+            .container-body{
+                width: 100%;
+                display: flex;
+                flex: 1;
+                //섹션
+            }
+        }
+    }
+}      
+      
+
+.section {
+  padding: 20px;
+}
+
+
+/* 콘텐츠 블록 */
+.content-item {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+.scroll-down {
+  font-size: 0.9rem;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .arrow-down {
+    width: 16px;
+    height: 16px;
+    border-left: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    transform: rotate(-45deg);
+    animation: bounce 2s infinite;
+  }
+}
+
+/* 애니메이션 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-45deg);
+  }
+}
