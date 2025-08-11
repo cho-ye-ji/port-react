@@ -11,7 +11,7 @@ const Home = () => {
         <div className="wrapper">
             <div className="page page-home">
                 {/* page-header */}
-                <div className="page-body">
+                <div className="page-body page-home">
                     <div className="container">
                         <div className="container-inner">
                             <div className="container-body">
@@ -20,7 +20,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* page-footer */}
+               
             </div>
         </div>
     );
@@ -29,7 +29,31 @@ const Home = () => {
 const IntroContent = () => {
     return(
         <>
-            <section className="section section--left">
+            <div className="content">
+                <div className="content-inner">
+                    <div className="content-body">
+                        <section className="section section--left">
+                            <img src={profileImage} alt="이미지 영역" />
+                        </section>
+                        <section className="section section--right">
+                            <div>
+                            <h3 className="content-title heading-lg">
+                                CHO YE JI
+                            </h3>
+                            <div className="hr"></div>
+                            <p className="ani-text">
+                                Flexible  
+                                {/* flexible 옆 글자 효과 */}
+                                <span className="inHidden">
+                                    Publisher & FrontEnd Developer
+                                </span>
+                            </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            {/* <section className="section section--left">
                 <img src={profileImage} alt="이미지 영역" />
             </section>
             <section className="section section--right">
@@ -39,7 +63,6 @@ const IntroContent = () => {
                         <div className="hr"></div>
                         <p className="ani-text">
                             Flexible  
-                            {/* flexible 옆 글자 효과 */}
                             <span className="inHidden">
                                 Publisher & FrontEnd Developer
                             </span>
@@ -50,7 +73,7 @@ const IntroContent = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }

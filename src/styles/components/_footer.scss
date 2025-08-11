@@ -1,0 +1,32 @@
+@use '../base/variables' as *;
+@use '../base/tokens' as *;
+@use '../base/_mixin' as *;
+@use "sass:map";
+
+.page-footer{
+    position: relative;
+    width: 100%;
+    footer{
+        position: absolute;
+        bottom: 20px;
+        color: red;
+        padding: 0 70px;
+        color: map.get($colors, primary);
+        font-size: 13px;
+        display: flex;
+        
+        align-items: center;
+        justify-content: space-between;
+        //임시 스타일임
+        nav{
+            ul{ 
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+        }
+        @include respond-max(lg) {
+            padding: 0 20px;
+        }
+    }
+}

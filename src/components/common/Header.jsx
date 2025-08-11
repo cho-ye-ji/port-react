@@ -29,7 +29,7 @@ const Header = () => {
     
     return(
         <header className={`header ${shoulHideHeader ? "no-header" : ""}`}>
-            <h1> REACT PORTFOLIO </h1>
+            <h1> YEJI </h1>
             <nav className="gnb">
                 <Link to="/" className="active">INTRO</Link>
                 <Link to="/">SKILL</Link>

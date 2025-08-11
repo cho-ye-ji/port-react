@@ -64,3 +64,29 @@
 .text-center {
   text-align: center;
 }
+
+/* 시각적 숨김: 화면에는 안 보이지만 스크린리더엔 읽힘 */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* 스킵 링크처럼: 평소엔 숨김, 포커스/활성 시 표시 */
+.sr-only--focusable {
+  position: absolute !important;
+  left: -9999px;
+}
+.sr-only--focusable:focus,
+.sr-only--focusable:active {
+  left: 8px; top: 8px;
+  width: auto; height: auto;
+  padding: 8px 12px;
+  clip: auto;
+  background: #fff;
+  outline: 2px solid currentColor;
+  border-radius: 6px;
+  z-index: 1000;
+}

@@ -12,16 +12,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 26px;
     z-index: $z-index-header;
     background-color: map.get($colors, white);
     color: rgba(map.get($colors, primary), 1);
     transition:background-color 0.3s ease;
+    h1{
+        font-size: 30px;
+        font-weight: 700;
+    }
     nav{
         display: flex;
         align-items: center;
-        gap: 7px;
+        gap: 6px;
         flex-direction: row;
+        font-size: 15px;
         a{
             display: flex;
             align-items: center;
@@ -29,9 +34,9 @@
             padding: 0 6px;
             width: 100%;
             flex: 1;
-            height: 28px;
+            height: 32px;
             box-sizing: border-box;
-            // line-height: 28px;
+            line-height: 32px;
             // background-color: rgba(255,0,0,0.2);;
             &.active{
                 color: map.get($colors, white);
