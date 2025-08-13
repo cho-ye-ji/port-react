@@ -13,20 +13,15 @@
     flex-direction: column;
 }
 .page{
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    
-    &.page-home {
-
-    }
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: 80px 1fr 30px;
     .page-body{
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100dvh; 
-      padding-top: 80px;
+      min-height: 0;
+      overflow: hidden;
       &.no-header {
         padding-top: 0;
       }
@@ -47,7 +42,6 @@
       
       max-width: 1400px;
       margin: 0 auto;
-      height: calc(100vh - 80px);
       box-sizing: border-box;
       .content-inner {
         width: 100%;
@@ -66,13 +60,12 @@
             padding: 20px;
             box-sizing: border-box;
             width: 100%;
-            &--left{
+            &-left{
                 display: flex;
                 align-items: center;
                 flex: 0 0 40%;
                 background-color: #282924;
                 height: 100%;
-                min-height: 100dvh;
                 img {
                     width: 100%;
                     height: auto;
@@ -83,7 +76,7 @@
                     display: none;
                 }
             }
-            &--right{
+            &-right{
               flex: 1 1 auto;
               display: flex;
               align-items: center;
@@ -92,29 +85,24 @@
                 width: 100%;
               }
             }
+            &__inner{
+              &-home{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+              }
+            }
           }
         }
       }
     }
     
-.page-footer{
-  position: relative;
-  width: 100%;
-  footer{
-    max-width: 1500px;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-  }
-}
-
-
-    .page-sub{
-        // 서브 페이지용
-        .container-inner {
-            align-items: flex-start;
-        }
+/* 서브 페이지 용 */
+.page-sub{
+    .container-inner {
+      align-items: flex-start;
     }
+  }
 }      
       
 

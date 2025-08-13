@@ -4,25 +4,30 @@
 @use "sass:map";
 
 .page-footer{
-    position: relative;
     width: 100%;
+    grid-row: 3;
     footer{
-        position: absolute;
-        bottom: 20px;
-        color: red;
-        padding: 0 70px;
-        color: map.get($colors, primary);
-        font-size: 13px;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
         display: flex;
-        
         align-items: center;
         justify-content: space-between;
-        //임시 스타일임
+        color: map.get($colors, primary);
+        font-size: 13px;
+
         nav{
             ul{ 
                 display: flex;
                 align-items: center;
                 gap: 6px;
+                li{
+                    a{
+                        display: flex;
+                        align-items: center;
+                    }
+                }
             }
         }
         @include respond-max(lg) {

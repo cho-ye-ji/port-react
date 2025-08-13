@@ -4,15 +4,12 @@
 
 .header{
     font-family: $font-mont;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     height: $header-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 26px;
+    padding: env(safe-area-inset-top, 0) 26px 0; /* iOS 상단 노치 대응*/
     z-index: $z-index-header;
     background-color: map.get($colors, white);
     color: rgba(map.get($colors, primary), 1);
@@ -35,8 +32,10 @@
             width: 100%;
             flex: 1;
             height: 32px;
+            min-height: 44px; 
+            /* 접근성 터치 타깃 높이 확보(기존 32px→권장 44px) */
+            line-height: 1;   
             box-sizing: border-box;
-            line-height: 32px;
             // background-color: rgba(255,0,0,0.2);;
             &.active{
                 color: map.get($colors, white);
