@@ -28,6 +28,7 @@ const Header = () => {
       }, []);
     
     return(
+      <div className="page-header">
         <header className={`header ${shoulHideHeader ? "no-header" : ""}`}>
             <h1> YEJI </h1>
             <nav className="gnb">
@@ -37,7 +38,9 @@ const Header = () => {
                 <Link to="/">PORTFOLIO</Link>
                 <Link to="/">CONTACT</Link>
             </nav>
-        </header>
+        </header>  
+      </div>
+      
     );
 }
 
