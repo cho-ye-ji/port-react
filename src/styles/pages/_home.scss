@@ -60,7 +60,7 @@
             padding: 20px;
             box-sizing: border-box;
             width: 100%;
-            &-left{
+            &--left{
                 display: flex;
                 align-items: center;
                 flex: 0 0 40%;
@@ -76,7 +76,7 @@
                     display: none;
                 }
             }
-            &-right{
+            &--right{
               flex: 1 1 auto;
               display: flex;
               align-items: center;
@@ -131,4 +131,19 @@
     font-weight: map.get($font-weights, bold);
   }
 }
-
+.word-rotate{
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  span{
+    display: block;
+    animation: slideWords 8s infinite;
+  }
+  @keyframes slideWords{
+    0%, 20%   { transform: translateY(0%); }
+    25%, 45%  { transform: translateY(-100%); }
+    50%, 70%  { transform: translateY(-200%); }
+    75%, 95%  { transform: translateY(-300%); }
+    100%      { transform: translateY(0%); }
+  }
+}

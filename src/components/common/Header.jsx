@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from 'react-router-dom'
 import '@/styles/components/_header.scss'
-import { useLocation } from "react-router-dom";
+
 
 const Header = () => {
     const location = useLocation();
@@ -32,11 +32,12 @@ const Header = () => {
         <header className={`header ${shoulHideHeader ? "no-header" : ""}`}>
             <h1> YEJI </h1>
             <nav className="gnb">
-                <Link to="/" className="active">INTRO</Link>
-                <Link to="/">SKILL</Link>
-                <Link to="/">PRJECT</Link>
-                <Link to="/">PORTFOLIO</Link>
-                <Link to="/">CONTACT</Link>
+                {/* <NavLink to="/" className="active">HOME</NavLink> */}
+                <NavLink to="/" end>HOME</NavLink>
+                <NavLink to="/skill">SKILL</NavLink>
+                <NavLink to="/project">PRJOECT</NavLink>
+                <NavLink to="/portfolio">PORTFOLIO</NavLink>
+                <NavLink to="/contact">CONTACT</NavLink>
             </nav>
         </header>  
       </div>
