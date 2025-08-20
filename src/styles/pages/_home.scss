@@ -1,110 +1,109 @@
 // 레이아웃 새로 컴포넌트화
 // 인트로 컨텐츠 컴포넌트 분리
 // 스타일 위치에 맞게 이동
-//layout.scss contered 정중앙 용이 있고 왼쪽 정렬용도 분류해서 만들어야함 
-@use '../base/tokens' as *;
-@use '../base/_mixin' as *;
+//layout.scss contered 정중앙 용이 있고 왼쪽 정렬용도 분류해서 만들어야함
+@use "../base/tokens" as *;
+@use "../base/_mixin" as *;
 @use "sass:map";
 
 .wrapper {
-    width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
-.page{
-    min-height: 100dvh;
-    display: grid;
-    grid-template-rows: 80px 1fr 30px;
-    .page-body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 0;
-      overflow: hidden;
-      &.no-header {
-        padding-top: 0;
-      }
-      .container{
-        width: 100%;
-        height: 100%;
-        .container-inner{
-          height: 100%;
-          .container-body{
-            height: 100%;
-          }
-        }
-      }
+.page {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 80px 1fr 30px;
+  .page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    overflow: hidden;
+    &.no-header {
+      padding-top: 0;
     }
-    .content {
+    .container {
       width: 100%;
       height: 100%;
-      
-      max-width: 1400px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      .content-inner {
-        width: 100%;
+      .container-inner {
         height: 100%;
-        display: flex;
-        @include respond-min(lg){
-          padding: 0 60px;
+        .container-body {
+          height: 100%;
         }
-        .content-body{
-          display: flex;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    .content-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      @include respond-min(lg) {
+        padding: 0 60px;
+      }
+      .content-body {
+        display: flex;
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+        background-color: rgb(246, 251, 255);
+        .section {
+          padding: 20px;
+          box-sizing: border-box;
           width: 100%;
-          flex: 1;
-          overflow: hidden;
-          background-color: rgb(246, 251, 255);
-          .section{
-            padding: 20px;
-            box-sizing: border-box;
-            width: 100%;
-            &--left{
-                display: flex;
-                align-items: center;
-                flex: 0 0 40%;
-                background-color: #282924;
-                height: 100%;
-                img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                }
-                // 1024px 이하에서 이미지 숨김
-                @include respond-max(lg) {
-                    display: none;
-                }
+          &--left {
+            display: flex;
+            align-items: center;
+            flex: 0 0 40%;
+            background-color: #282924;
+            height: 100%;
+            img {
+              width: 100%;
+              height: auto;
+              display: block;
             }
-            &--right{
-              flex: 1 1 auto;
+            // 1024px 이하에서 이미지 숨김
+            @include respond-max(lg) {
+              display: none;
+            }
+          }
+          &--right {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            padding: 60px;
+            @include respond-max(lg) {
+              width: 100%;
+            }
+          }
+          &__inner {
+            &-home {
               display: flex;
-              align-items: center;
-              padding: 60px;
-              @include respond-max(lg){
-                width: 100%;
-              }
-            }
-            &__inner{
-              &-home{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-              }
+              flex-direction: column;
+              gap: 30px;
             }
           }
         }
       }
     }
-    
-/* 서브 페이지 용 */
-.page-sub{
+  }
+
+  /* 서브 페이지 용 */
+  .page-sub {
     .container-inner {
       align-items: flex-start;
     }
   }
-}      
-      
+}
 
 /* 콘텐츠 블록 */
 .content-item {
@@ -112,38 +111,59 @@
   width: 100%;
   margin: 0 auto;
 }
-.hr{
+.hr {
   width: 30px;
   height: 2px;
   background-color: map.get($colors, text);
 }
-.heading-lg{ /* 공통 선언하기 */
-  font-size: map.get($font-sizes,heading-lg);
+.heading-lg {
+  /* 공통 선언하기 */
+  font-size: map.get($font-sizes, heading-lg);
   font-weight: map.get($font-weights, bold);
-  color: map.get($colors , text);
+  color: map.get($colors, text);
   font-family: $font-mont;
   min-width: 50px;
 }
-.ani-text{
+.ani-text {
   font-size: map.get($font-sizes, title-md);
-  color: map.get($colors , text);
-  span{
+  color: map.get($colors, text);
+  span {
     font-weight: map.get($font-weights, bold);
+    &.static-text {
+      font-weight: 500;
+      display: inline-block;
+      margin-right: 5px;
+    }
   }
 }
-.word-rotate{
+.word-rotate {
   display: inline-block;
   overflow: hidden;
-  height: 1em;
-  span{
+  height: 31px; /* 1em or 31px */
+  position: absolute;
+  span {
     display: block;
     animation: slideWords 8s infinite;
   }
-  @keyframes slideWords{
-    0%, 20%   { transform: translateY(0%); }
-    25%, 45%  { transform: translateY(-100%); }
-    50%, 70%  { transform: translateY(-200%); }
-    75%, 95%  { transform: translateY(-300%); }
-    100%      { transform: translateY(0%); }
+  @keyframes slideWords {
+    0%,
+    20% {
+      transform: translateY(0%);
+    }
+    25%,
+    45% {
+      transform: translateY(-100%);
+    }
+    50%,
+    70% {
+      transform: translateY(-200%);
+    }
+    75%,
+    95% {
+      transform: translateY(-300%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
   }
 }
