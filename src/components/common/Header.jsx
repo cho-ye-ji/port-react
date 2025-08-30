@@ -7,7 +7,7 @@ const Header = () => {
     const location = useLocation();
 
     //특정 경로 헤더 숨김
-    const hideHeaderRouts = ["./sub"];
+    const hideHeaderRouts = ["/sub"];
     const shoulHideHeader = hideHeaderRouts.includes(location.pathname);
 
     //스크롤 이벤트
@@ -35,7 +35,7 @@ const Header = () => {
                 {/* <NavLink to="/" className="active">HOME</NavLink> */}
                 <NavLink to="/" end>HOME</NavLink>
                 <NavLink to="/skill">SKILL</NavLink>
-                <NavLink to="/project">PRJOECT</NavLink>
+                <NavLink to="/project">PRIJECT</NavLink>
                 <NavLink to="/portfolio">PORTFOLIO</NavLink>
                 <NavLink to="/contact">CONTACT</NavLink>
             </nav>
